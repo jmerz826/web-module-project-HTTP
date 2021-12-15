@@ -16,7 +16,7 @@ const App = (props) => {
   const [favoriteMovies, setFavoriteMovies] = useState([]);
 
   useEffect(()=>{
-    axios.get('http://localhost:5001/api/movies')
+    axios.get('http://localhost:9000/api/movies')
       .then(res => {
         setMovies(res.data);
       })
@@ -56,7 +56,7 @@ const App = (props) => {
               <MovieList movies={movies}/>
             </Route>
 
-            <Route path="/">
+            <Route exact path="/">
               <Redirect to="/movies"/>
             </Route>
           </Switch>
